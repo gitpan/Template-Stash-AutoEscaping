@@ -17,6 +17,7 @@ inc/Test/Base/Filter.pm
 inc/Test/Builder.pm
 inc/Test/Builder/Module.pm
 inc/Test/More.pm
+inc/URI.pm
 lib/Template/Stash/AutoEscaping.pm
 lib/Template/Stash/AutoEscaping/Escaped/Base.pm
 lib/Template/Stash/AutoEscaping/Escaped/HTML.pm

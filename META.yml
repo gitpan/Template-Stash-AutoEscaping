@@ -20,10 +20,17 @@ no_index:
     - xt
 requires:
   Class::Data::Inheritable: 0
+  Data::Dumper: 0
   Filter::Util::Call: 0
   Template: 0
+  Template::Config: 0
+  Template::Exception: 0
   UNIVERSAL::require: 0
+  base: 0
+  overload: 0
+  strict: 0
+  warnings: 0
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/shlomif/Template-Stash-AutoEscape.git
-version: 0.03
+version: 0.0301
