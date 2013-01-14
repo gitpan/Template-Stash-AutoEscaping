@@ -1,27 +1,49 @@
 ---
 abstract: 'escape automatically in Template-Toolkit.'
 author:
-  - 'mala <cpan@ma.la> (original author of L<Template::Stash::AutoEscape>)'
+  - 'Shlomi Fish <shlomif@cpan.org>'
 build_requires:
-  ExtUtils::MakeMaker: 6.42
+  Test::Base: 0
+  Test::More: 0
+  URI: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
-distribution_type: module
-generated_by: 'Module::Install version 1.00'
+  Module::Build: 0.36
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+keywords:
+  - autoescape
+  - autoescaping
+  - escape
+  - injection
+  - security
+  - stash
+  - template
+  - toolkit
+  - xss
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Template-Stash-AutoEscaping
-no_index:
-  directory:
-    - inc
-    - t
-    - xt
+provides:
+  Template::Stash::AutoEscaping:
+    file: lib/Template/Stash/AutoEscaping.pm
+    version: 0.0302
+  Template::Stash::AutoEscaping::Escaped::Base:
+    file: lib/Template/Stash/AutoEscaping/Escaped/Base.pm
+    version: 0
+  Template::Stash::AutoEscaping::Escaped::HTML:
+    file: lib/Template/Stash/AutoEscaping/Escaped/HTML.pm
+    version: 0
+  Template::Stash::AutoEscaping::Escaped::YourCode:
+    file: lib/Template/Stash/AutoEscaping/Escaped/YourCode.pm
+    version: 0
+  Template::Stash::AutoEscaping::RawString:
+    file: lib/Template/Stash/AutoEscaping/RawString.pm
+    version: 0
 requires:
   Class::Data::Inheritable: 0
   Data::Dumper: 0
-  Filter::Util::Call: 0
   Template: 0
   Template::Config: 0
   Template::Exception: 0
@@ -32,5 +54,5 @@ requires:
   warnings: 0
 resources:
   license: http://dev.perl.org/licenses/
-  repository: git://github.com/shlomif/Template-Stash-AutoEscape.git
-version: 0.0301
+  repository: http://github.com/shlomif/Template-Stash-AutoEscaping
+version: 0.0302

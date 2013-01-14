@@ -2,7 +2,7 @@ package Template::Stash::AutoEscaping;
 
 use strict;
 use warnings;
-our $VERSION = '0.0301';
+our $VERSION = '0.0302';
 
 use Template::Config;
 use base ($Template::Config::STASH, 'Class::Data::Inheritable');
@@ -46,7 +46,7 @@ sub new {
             $escape_class->require or die $@;
         }
     }
-    
+
     foreach my $ops ($Template::Stash::SCALAR_OPS, $Template::Stash::LIST_OPS)
     {
         $ops->{$self->{method_for_raw}} = sub {
@@ -96,7 +96,7 @@ sub get {
     # get value
     warn Dumper +{ args => \@args } if $DEBUG;
 
-    # note: hack for [% hash.${key} %] [% hash.item(key) %] 
+    # note: hack for [% hash.${key} %] [% hash.item(key) %]
     # key expected raw string.
     if (!$ESCAPE_ARGS && ref $args[0] eq "ARRAY" && (scalar @{$args[0]} > 2)){
         my $escaped_class = $self->class_for($self->{escape_type});
@@ -131,7 +131,7 @@ sub get {
             return $self->escape($var);
         }
     }
-    # via .raw vmethod 
+    # via .raw vmethod
     if ($ref eq $self->{_raw_string_class}) {
         return "$var";
     }
@@ -150,7 +150,7 @@ sub class_for {
     if (@_ == 1) {
         return $class->class_for_type->{$_[0]} || __PACKAGE__ . '::Escaped::' . $_[0];
     } elsif (@_ == 2) {
-        return $class->class_for_type->{$_[0]} = $_[1]; 
+        return $class->class_for_type->{$_[0]} = $_[1];
     }
 }
 
@@ -171,6 +171,8 @@ sub escape_count {
 
 __END__
 
+=encoding utf8
+
 =head1 NAME
 
 Template::Stash::AutoEscaping - escape automatically in Template-Toolkit.
@@ -180,14 +182,14 @@ Template::Stash::AutoEscaping - escape automatically in Template-Toolkit.
   use Template;
   use Template::Stash::AutoEscaping;
   my $tt = Template->new({
-    STASH => Template::Stash::AutoEscaping->new  
+    STASH => Template::Stash::AutoEscaping->new
   });
 
 =head1 METHODS
 
 =head2 new
 
-=over 2
+=over 4
 
 =item die_on_unescaped
 
@@ -201,12 +203,12 @@ default is HTML
 
 =item method_for_escape
 
-The default method to escape a value explicitly (mostly useful with 
+The default method to escape a value explicitly (mostly useful with
 C<die_on_unescaped> .
 
 =item method_for_raw
 
-default is raw, you can get not escaped value from [% value.raw %] 
+default is raw, you can get not escaped value from [% value.raw %]
 
 =item escape_method
 
@@ -216,13 +218,13 @@ default is raw, you can get not escaped value from [% value.raw %]
     })
   });
 
-=item ignore_escape  
+=item ignore_escape
 
   my $stash = Template::Stash::AutoEscaping->new({ignore_escape => [qw(include_html include_raw my_escape_func)], ... );
 
   You can disable auto-escape for some value or TT-Macro.
   For example: include other component, for output safety html, using other escape method, etc.
-  
+
 =back
 
 =head2 class_for
@@ -230,18 +232,36 @@ default is raw, you can get not escaped value from [% value.raw %]
     Template::Stash::AutoEscaping->class_for("HTML") # Template::Stash::AutoEscaping::Escaped::HTML
     Template::Stash::AutoEscaping->class_for("HTML" => "MyHTMLString");
 
+=head2 escape
+
+B<For internal use>.
+
+=head2 escape_count
+
+B<For internal use>.
+
+=head2 get
+
+B<For internal use>.
+
+=head2 get_raw_args
+
+B<For internal use>.
+
 =head1 DESCRIPTION
 
 Template::Stash::AutoEscaping is a sub class of L<Template::Stash>, automatically escape all HTML strings and avoid XSS vulnerability.
 
 =head1 CONFIGURE
 
-=over 2
+=over 4
 
 =item $Template::Stash::AutoEscaping::ESCAPE_ARGS
 
  default is 0. for example "key of hash" or "args of vmethods" are not escaped. I think this is good in most cases.
  [% hash.${key} %] [% hash.item(key) %] means [% hash.${key.raw} | html %] [% hash.item(key.raw) | html %] by default.
+
+=back
 
 =head1 AUTHOR
 
@@ -249,7 +269,7 @@ mala E<lt>cpan@ma.laE<gt> (original author of L<Template::Stash::AutoEscape>)
 
 Shlomi Fish (L<http://www.shlomifish.org/>) added some enhancements and
 fixes, while disclaiming all rights, as part of his work for
-L<http://reask.com/> and released the result as 
+L<http://reask.com/> and released the result as
 C<Template::Stash::AutoEscaping> .
 
 =head1 SEE ALSO

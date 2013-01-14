@@ -1,0 +1,87 @@
+{
+   "abstract" : "escape automatically in Template-Toolkit.",
+   "author" : [
+      "Shlomi Fish <shlomif@cpan.org>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+   "keywords" : [
+      "autoescape",
+      "autoescaping",
+      "escape",
+      "injection",
+      "security",
+      "stash",
+      "template",
+      "toolkit",
+      "xss"
+   ],
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Template-Stash-AutoEscaping",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Test::Base" : "0",
+            "Test::More" : "0",
+            "URI" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.36"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Class::Data::Inheritable" : "0",
+            "Data::Dumper" : "0",
+            "Template" : "0",
+            "Template::Config" : "0",
+            "Template::Exception" : "0",
+            "UNIVERSAL::require" : "0",
+            "base" : "0",
+            "overload" : "0",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      }
+   },
+   "provides" : {
+      "Template::Stash::AutoEscaping" : {
+         "file" : "lib/Template/Stash/AutoEscaping.pm",
+         "version" : "0.0302"
+      },
+      "Template::Stash::AutoEscaping::Escaped::Base" : {
+         "file" : "lib/Template/Stash/AutoEscaping/Escaped/Base.pm",
+         "version" : 0
+      },
+      "Template::Stash::AutoEscaping::Escaped::HTML" : {
+         "file" : "lib/Template/Stash/AutoEscaping/Escaped/HTML.pm",
+         "version" : 0
+      },
+      "Template::Stash::AutoEscaping::Escaped::YourCode" : {
+         "file" : "lib/Template/Stash/AutoEscaping/Escaped/YourCode.pm",
+         "version" : 0
+      },
+      "Template::Stash::AutoEscaping::RawString" : {
+         "file" : "lib/Template/Stash/AutoEscaping/RawString.pm",
+         "version" : 0
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ],
+      "repository" : {
+         "url" : "http://github.com/shlomif/Template-Stash-AutoEscaping"
+      }
+   },
+   "version" : "0.0302"
+}
