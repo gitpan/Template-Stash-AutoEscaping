@@ -1,4 +1,3 @@
-Build
 Build.PL
 Changes
 inc/Test/Run/Builder.pm
@@ -7,7 +6,9 @@ lib/Template/Stash/AutoEscaping/Escaped/Base.pm
 lib/Template/Stash/AutoEscaping/Escaped/HTML.pm
 lib/Template/Stash/AutoEscaping/Escaped/YourCode.pm
 lib/Template/Stash/AutoEscaping/RawString.pm
+LICENSE
 MANIFEST			This list of files
+META.json
 META.yml
 README
 README.ja
@@ -18,6 +19,7 @@ t/00_compile.t
 t/01_module.t
 t/02_hashkey.t
 t/03_die_on_non_escaped.t
+t/cpan-changes.t
 t/pod-coverage.t
 t/pod.t
 t/style-trailing-space.t
@@ -25,4 +27,3 @@ xt/01_podspell.t
 xt/02_perlcritic.t
 xt/03_pod.t
 xt/perlcriticrc
-META.json

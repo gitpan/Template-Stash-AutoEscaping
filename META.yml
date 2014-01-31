@@ -9,7 +9,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.36
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Module::Build version 0.4007, CPAN::Meta::Converter version 2.132830'
 keywords:
   - autoescape
   - autoescaping
@@ -28,19 +28,15 @@ name: Template-Stash-AutoEscaping
 provides:
   Template::Stash::AutoEscaping:
     file: lib/Template/Stash/AutoEscaping.pm
-    version: 0.0302
+    version: 0.0303
   Template::Stash::AutoEscaping::Escaped::Base:
     file: lib/Template/Stash/AutoEscaping/Escaped/Base.pm
-    version: 0
   Template::Stash::AutoEscaping::Escaped::HTML:
     file: lib/Template/Stash/AutoEscaping/Escaped/HTML.pm
-    version: 0
   Template::Stash::AutoEscaping::Escaped::YourCode:
     file: lib/Template/Stash/AutoEscaping/Escaped/YourCode.pm
-    version: 0
   Template::Stash::AutoEscaping::RawString:
     file: lib/Template/Stash/AutoEscaping/RawString.pm
-    version: 0
 requires:
   Class::Data::Inheritable: 0
   Data::Dumper: 0
@@ -50,9 +46,11 @@ requires:
   UNIVERSAL::require: 0
   base: 0
   overload: 0
+  parent: 0
+  perl: 5.012
   strict: 0
   warnings: 0
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/shlomif/Template-Stash-AutoEscaping
-version: 0.0302
+version: 0.0303
